@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Simple ToDo App",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "npm start --prefix ../frontend",
+    "start": "nodemon server.js",
+    "dev": "concurrently \"npm run start\" \"npm run frontend\""
+  },
+  "author": "Rusiru Abhisheak",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.17",
+    "validator": "^13.1.17"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
