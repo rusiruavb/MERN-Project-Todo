@@ -93,4 +93,17 @@ router.delete('/deletetodo/:id', auth, async(req, res) => {
   }
 })
 
+// @url           DELETE /todo/deleteall
+// @description   delete all todos
+// @access-mode   private
+router.delete('/deleteall', auth, async (req, res) => {
+  try {
+    await ToDo.deleteMany({userID: req.user.id})
+    res.status(200).send({status: 'All ToDos deleted'})
+  } catch (error) {
+    res.status(500).send(error.message)
+    console.log(error.message)
+  }
+})
+
 module.exports = router

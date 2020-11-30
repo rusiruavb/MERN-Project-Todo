@@ -19,7 +19,7 @@ const Login = () => {
     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/login`, user)
       .then((res) => {
         localStorage.setItem("Authorization", res.data.token)
-        window.location = '/me'
+        window.location = '/'
       })
       .catch((error) => {
         console.log(error.message)
